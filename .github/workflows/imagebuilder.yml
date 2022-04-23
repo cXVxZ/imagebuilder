@@ -14,7 +14,7 @@ on:
 env:
   Imagebuilder_URL: https://downloads.openwrt.org/releases/21.02.3/targets/ramips/mt7620/openwrt-imagebuilder-21.02.3-ramips-mt7620.Linux-x86_64.tar.xz
   wrtbwmon_URL: https://github.com/brvphoenix/wrtbwmon/releases/download/v1.2.1-3/wrtbwmon_1.2.1-3_all.ipk
-  luci-app-wrtbwmon_URL: https://github.com/brvphoenix/luci-app-wrtbwmon/releases/download/release-2.0.10/luci-app-wrtbwmon_2.0.10_all.ipk
+  luci_app_wrtbwmon_URL: https://github.com/brvphoenix/luci-app-wrtbwmon/releases/download/release-2.0.10/luci-app-wrtbwmon_2.0.10_all.ipk
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: false
@@ -53,7 +53,7 @@ jobs:
         [ ! -d packages ] && mkdir packages
         cd packages
         wget $wrtbwmon_URL
-        wget $luci-app-wrtbwmon_URL
+        wget $luci_app_wrtbwmon_URL
         ln -sf /workdir/openwrt-imagebuilder-*/ $GITHUB_WORKSPACE/openwrt
 
     - name: SSH connection to Actions
